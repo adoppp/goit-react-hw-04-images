@@ -30,12 +30,11 @@ export const Modal = ({ onKeydownClose, onBackdropClose, children }) => {
     // }
 
     useEffect(() => {
-        window.addEventListener('keydown', onKeydownClose);
-        
-        return () => {
-            window.removeEventListener('keydown', onKeydownClose);
-        }
-    }, []);
+    window.addEventListener('keydown', onKeydownClose);
+    return () => {
+      window.removeEventListener('keydown', onKeydownClose);
+    };
+    },);
 
     // componentWillUnmount() {
     //     window.removeEventListener('keydown', onKeydownClose);

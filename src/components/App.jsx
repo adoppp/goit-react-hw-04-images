@@ -117,7 +117,6 @@ export const App = () =>  {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const [error, setError] = useState(null);
   const [showLoadMore, setShowLoadMore] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
@@ -147,14 +146,6 @@ export const App = () =>  {
   //     }
   //   }
   // }
-
-   const scroll = () => {
-    const { clientHeight } = document.documentElement;
-    window.scrollBy({
-      top: clientHeight - 180,
-      behavior: 'smooth',
-    });
-  };
 
    useEffect(() => {
     const fetchImages = async () => {
