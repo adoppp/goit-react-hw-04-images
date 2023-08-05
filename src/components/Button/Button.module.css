@@ -1,0 +1,23 @@
+.button {
+    background-color: rgb(35, 52, 52);
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 10px;
+    padding: 6px 40px;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background-color: rgb(21, 52, 52);
+}
+
+.button:active {
+    background-color: rgb(17, 67, 67);
+}
+
+.btnContainer {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
