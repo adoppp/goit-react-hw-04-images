@@ -4,18 +4,21 @@ import css from './ImageGallery.module.css';
 
 export const ImageGallery = ({ arrayResults, onOpenModal }) => {
 
+    const itemImage = 
+        arrayResults.map(image => {
+            return (
+                <ImageGalleryItem
+                    key={image.id}
+                    imageId={image.id}
+                    imageURL={image.webformatURL}
+                    onOpenModal={onOpenModal}
+                />
+            )
+        });
+
     return (
         <ul className={css.gallery} id='gallery'>
-              {arrayResults.map(image => {
-                return (
-                    <ImageGalleryItem
-                        key={image.id}
-                        imageId={image.id}
-                        imageURL={image.webformatURL}
-                        onOpenModal={onOpenModal}
-                    />
-                )
-            })}
+              {itemImage}
         </ul>
     );
 };

@@ -1,8 +1,27 @@
-export const fetchImages = async (name, page = 1) => {
-    const key = '37837033-b275b0d8f4f032e99cd88a403';
-    const response = await fetch(`https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=photo&orientation=horizontal&per_page=12`);
-    if (response.ok) {
-        return response.json();
-    }
-    return await Promise.reject(`No image found with the name ${name}`);
-}
+// export const fetchImagesD = async (name, page = 1) => {
+//     const key = '37837033-b275b0d8f4f032e99cd88a403';
+//     const response = await fetch(`https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=photo&orientation=horizontal&per_page=12`);
+//     if (response.ok) {
+//         return response.json();
+//     }
+//     return await Promise.reject(`No image found with the name ${name}`);
+// }
+
+import axios from 'axios';
+
+const KEY = '37837033-b275b0d8f4f032e99cd88a403';
+const URL = 'https://pixabay.com/api/';
+
+export const getImages = async (searchQuery, page) => {
+  const response = await axios.get(URL, {
+    params: {
+      q: searchQuery,
+      key: KEY,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      per_page: 12,
+      page,
+    },
+  });
+  return response.data;
+};
